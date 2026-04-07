@@ -19,7 +19,7 @@ public:
         
 
         concert->fillSeat(positions); 
-        
+
         
         return positions.size()*amount;
 
@@ -32,6 +32,7 @@ public:
         auto concert = *mt.begin();
 
         Ticket* tkt = new Ticket(user,concert,amount,positions);
+        user->booked_concerts.insert(tkt);
 
         return tkt;
     }
